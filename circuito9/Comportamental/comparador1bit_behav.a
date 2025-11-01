@@ -1,0 +1,37 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001ea8fd52720 .scope module, "comparador1bit_behav" "comparador1bit_behav" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "maior";
+    .port_info 3 /OUTPUT 1 "menor";
+    .port_info 4 /OUTPUT 1 "igual";
+o000001ea8fd87098 .functor BUFZ 1, C4<z>; HiZ drive
+L_000001ea8fc1a1b0 .functor NOT 1, o000001ea8fd87098, C4<0>, C4<0>, C4<0>;
+o000001ea8fd87068 .functor BUFZ 1, C4<z>; HiZ drive
+L_000001ea8fd868e0 .functor AND 1, o000001ea8fd87068, L_000001ea8fc1a1b0, C4<1>, C4<1>;
+L_000001ea8fd531c0 .functor NOT 1, o000001ea8fd87068, C4<0>, C4<0>, C4<0>;
+L_000001ea8fd52b30 .functor AND 1, L_000001ea8fd531c0, o000001ea8fd87098, C4<1>, C4<1>;
+L_000001ea8fc1ec00 .functor XOR 1, o000001ea8fd87068, o000001ea8fd87098, C4<0>, C4<0>;
+L_000001ea8fc1ec70 .functor NOT 1, L_000001ea8fc1ec00, C4<0>, C4<0>, C4<0>;
+v000001ea8fd52fa0_0 .net *"_ivl_0", 0 0, L_000001ea8fc1a1b0;  1 drivers
+v000001ea8fd86840_0 .net *"_ivl_4", 0 0, L_000001ea8fd531c0;  1 drivers
+v000001ea8fc1a110_0 .net *"_ivl_8", 0 0, L_000001ea8fc1ec00;  1 drivers
+v000001ea8fd528b0_0 .net "a", 0 0, o000001ea8fd87068;  0 drivers
+v000001ea8fd52950_0 .net "b", 0 0, o000001ea8fd87098;  0 drivers
+v000001ea8fd529f0_0 .net "igual", 0 0, L_000001ea8fc1ec70;  1 drivers
+v000001ea8fd52a90_0 .net "maior", 0 0, L_000001ea8fd868e0;  1 drivers
+v000001ea8fc1e750_0 .net "menor", 0 0, L_000001ea8fd52b30;  1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "comparador1bit_behav.v";

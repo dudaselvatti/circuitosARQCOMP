@@ -1,0 +1,45 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_00000134021726e0 .scope module, "subtratorcompleto_behav" "subtratorcompleto_behav" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "borrow_in";
+    .port_info 3 /OUTPUT 1 "diff";
+    .port_info 4 /OUTPUT 1 "borrow_out";
+o00000134021a7128 .functor BUFZ 1, C4<z>; HiZ drive
+o00000134021a7158 .functor BUFZ 1, C4<z>; HiZ drive
+L_000001340215ac50 .functor XOR 1, o00000134021a7128, o00000134021a7158, C4<0>, C4<0>;
+o00000134021a7188 .functor BUFZ 1, C4<z>; HiZ drive
+L_0000013402172f80 .functor XOR 1, L_000001340215ac50, o00000134021a7188, C4<0>, C4<0>;
+L_00000134021731c0 .functor NOT 1, o00000134021a7128, C4<0>, C4<0>, C4<0>;
+L_00000134021a1850 .functor AND 1, L_00000134021731c0, o00000134021a7158, C4<1>, C4<1>;
+L_00000134021a18c0 .functor NOT 1, o00000134021a7128, C4<0>, C4<0>, C4<0>;
+L_00000134021a1930 .functor AND 1, L_00000134021a18c0, o00000134021a7188, C4<1>, C4<1>;
+L_00000134021a19a0 .functor OR 1, L_00000134021a1850, L_00000134021a1930, C4<0>, C4<0>;
+L_00000134021a1a10 .functor AND 1, o00000134021a7158, o00000134021a7188, C4<1>, C4<1>;
+L_00000134021a1a80 .functor OR 1, L_00000134021a19a0, L_00000134021a1a10, C4<0>, C4<0>;
+v0000013402172d60_0 .net *"_ivl_0", 0 0, L_000001340215ac50;  1 drivers
+v000001340215abb0_0 .net *"_ivl_10", 0 0, L_00000134021a1930;  1 drivers
+v000001340215ee60_0 .net *"_ivl_12", 0 0, L_00000134021a19a0;  1 drivers
+v000001340215ef00_0 .net *"_ivl_14", 0 0, L_00000134021a1a10;  1 drivers
+v0000013402172870_0 .net *"_ivl_4", 0 0, L_00000134021731c0;  1 drivers
+v0000013402172910_0 .net *"_ivl_6", 0 0, L_00000134021a1850;  1 drivers
+v00000134021729b0_0 .net *"_ivl_8", 0 0, L_00000134021a18c0;  1 drivers
+v0000013402172a50_0 .net "a", 0 0, o00000134021a7128;  0 drivers
+v00000134021a0890_0 .net "b", 0 0, o00000134021a7158;  0 drivers
+v00000134021a0bb0_0 .net "borrow_in", 0 0, o00000134021a7188;  0 drivers
+v00000134021a15b0_0 .net "borrow_out", 0 0, L_00000134021a1a80;  1 drivers
+v00000134021a09d0_0 .net "diff", 0 0, L_0000013402172f80;  1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "subtratorcompleto_behav.v";

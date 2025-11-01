@@ -1,0 +1,31 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000020dff0d2720 .scope module, "comparador4bit_behav" "comparador4bit_behav" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "a";
+    .port_info 1 /INPUT 4 "b";
+    .port_info 2 /OUTPUT 1 "maior";
+    .port_info 3 /OUTPUT 1 "menor";
+    .port_info 4 /OUTPUT 1 "igual";
+o0000020dff106fa8 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v0000020dff0d2ef0_0 .net "a", 3 0, o0000020dff106fa8;  0 drivers
+o0000020dff106fd8 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v0000020dff106b30_0 .net "b", 3 0, o0000020dff106fd8;  0 drivers
+v0000020dff106820_0 .net "igual", 0 0, L_0000020dff24d4c0;  1 drivers
+v0000020dff0d28b0_0 .net "maior", 0 0, L_0000020dff0d29f0;  1 drivers
+v0000020dff0d2950_0 .net "menor", 0 0, L_0000020dff0d2a90;  1 drivers
+L_0000020dff0d29f0 .cmp/gt 4, o0000020dff106fa8, o0000020dff106fd8;
+L_0000020dff0d2a90 .cmp/gt 4, o0000020dff106fd8, o0000020dff106fa8;
+L_0000020dff24d4c0 .cmp/eq 4, o0000020dff106fa8, o0000020dff106fd8;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "comparador4bit_behav.v";
