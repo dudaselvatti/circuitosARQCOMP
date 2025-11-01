@@ -1,0 +1,45 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 10;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_00000219c42de6f0 .scope module, "porta_not_struct_tb" "porta_not_struct_tb" 2 4;
+ .timescale -9 -10;
+v00000219c42028d0_0 .var "a0", 0 0;
+v00000219c4202d30_0 .net "y0", 0 0, L_00000219c41d2ec0;  1 drivers
+S_00000219c42de880 .scope module, "uut" "porta_not_struct" 2 8, 3 1 0, S_00000219c42de6f0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /OUTPUT 1 "y";
+L_00000219c4205ac0 .functor NOT 1, v00000219c42028d0_0, C4<0>, C4<0>, C4<0>;
+L_00000219c41d2ec0 .functor NOT 1, v00000219c42028d0_0, C4<0>, C4<0>, C4<0>;
+L_00000219c41d3180 .functor NOT 1, v00000219c42028d0_0, C4<0>, C4<0>, C4<0>;
+v00000219c42de3c0_0 .net "a", 0 0, v00000219c42028d0_0;  1 drivers
+RS_00000219c4207008 .resolv tri, L_00000219c4205ac0, L_00000219c41d3180;
+v00000219c42032d0_0 .net8 "not_a", 0 0, RS_00000219c4207008;  2 drivers
+v00000219c4202b50_0 .net "y", 0 0, L_00000219c41d2ec0;  alias, 1 drivers
+    .scope S_00000219c42de6f0;
+T_0 ;
+    %vpi_call 2 11 "$dumpfile", "porta_not_struct.vcd" {0 0 0};
+    %vpi_call 2 12 "$dumpvars", 32'sb00000000000000000000000000000000, S_00000219c42de6f0 {0 0 0};
+    %vpi_call 2 14 "$monitor", "Tempo=%0t | a0=%b => y0=%b", $time, v00000219c42028d0_0, v00000219c4202d30_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000219c42028d0_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000219c42028d0_0, 0, 1;
+    %delay 100, 0;
+    %delay 100, 0;
+    %vpi_call 2 19 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "porta_not_struct_tb.v";
+    "./porta_not_struct.v";

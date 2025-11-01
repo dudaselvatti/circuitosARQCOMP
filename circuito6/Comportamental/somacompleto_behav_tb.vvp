@@ -1,0 +1,109 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 10;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000026aa345bdc0 .scope module, "somacompleto_behav_tb" "somacompleto_behav_tb" 2 4;
+ .timescale -9 -10;
+v0000026aa32c2a40_0 .var "a_tb", 0 0;
+v0000026aa32c2ae0_0 .var "b_tb", 0 0;
+v0000026aa3340480_0 .var "cin_tb", 0 0;
+v0000026aa33407a0_0 .net "cout_tb", 0 0, L_0000026aa3459bc0;  1 drivers
+v0000026aa333fda0_0 .net "sum_tb", 0 0, L_0000026aa3459a70;  1 drivers
+S_0000026aa345a7f0 .scope module, "uut" "somacompleto_behav" 2 12, 3 1 0, S_0000026aa345bdc0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "carry_in";
+    .port_info 3 /OUTPUT 1 "sum";
+    .port_info 4 /OUTPUT 1 "carry_out";
+L_0000026aa34596f0 .functor XOR 1, v0000026aa32c2a40_0, v0000026aa32c2ae0_0, C4<0>, C4<0>;
+L_0000026aa3459a70 .functor XOR 1, L_0000026aa34596f0, v0000026aa3340480_0, C4<0>, C4<0>;
+L_0000026aa3459df0 .functor AND 1, v0000026aa32c2a40_0, v0000026aa32c2ae0_0, C4<1>, C4<1>;
+L_0000026aa3459760 .functor XOR 1, v0000026aa32c2a40_0, v0000026aa32c2ae0_0, C4<0>, C4<0>;
+L_0000026aa34597d0 .functor AND 1, v0000026aa3340480_0, L_0000026aa3459760, C4<1>, C4<1>;
+L_0000026aa3459bc0 .functor OR 1, L_0000026aa3459df0, L_0000026aa34597d0, C4<0>, C4<0>;
+v0000026aa32c2da0_0 .net *"_ivl_0", 0 0, L_0000026aa34596f0;  1 drivers
+v0000026aa345a630_0 .net *"_ivl_4", 0 0, L_0000026aa3459df0;  1 drivers
+v0000026aa345a980_0 .net *"_ivl_6", 0 0, L_0000026aa3459760;  1 drivers
+v0000026aa345aa20_0 .net *"_ivl_8", 0 0, L_0000026aa34597d0;  1 drivers
+v0000026aa32c2720_0 .net "a", 0 0, v0000026aa32c2a40_0;  1 drivers
+v0000026aa32c27c0_0 .net "b", 0 0, v0000026aa32c2ae0_0;  1 drivers
+v0000026aa32c2860_0 .net "carry_in", 0 0, v0000026aa3340480_0;  1 drivers
+v0000026aa32c2900_0 .net "carry_out", 0 0, L_0000026aa3459bc0;  alias, 1 drivers
+v0000026aa32c29a0_0 .net "sum", 0 0, L_0000026aa3459a70;  alias, 1 drivers
+    .scope S_0000026aa345bdc0;
+T_0 ;
+    %vpi_call 2 21 "$dumpfile", "somacompleto_behav.vcd" {0 0 0};
+    %vpi_call 2 22 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000026aa345bdc0 {0 0 0};
+    %vpi_call 2 24 "$monitor", "Tempo=%0t | a=%b, b=%b, cin=%b | sum=%b, cout=%b", $time, v0000026aa32c2a40_0, v0000026aa32c2ae0_0, v0000026aa3340480_0, v0000026aa333fda0_0, v0000026aa33407a0_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000026aa32c2a40_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000026aa32c2ae0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000026aa3340480_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000026aa32c2a40_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000026aa32c2ae0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000026aa3340480_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000026aa32c2a40_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000026aa32c2ae0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000026aa3340480_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000026aa32c2a40_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000026aa32c2ae0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000026aa3340480_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000026aa32c2a40_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000026aa32c2ae0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000026aa3340480_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000026aa32c2a40_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000026aa32c2ae0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000026aa3340480_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000026aa32c2a40_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000026aa32c2ae0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000026aa3340480_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000026aa32c2a40_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000026aa32c2ae0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000026aa3340480_0, 0, 1;
+    %delay 100, 0;
+    %delay 100, 0;
+    %vpi_call 2 36 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "somacompleto_behav_tb.v";
+    "./somacompleto_behav.v";

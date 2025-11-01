@@ -1,0 +1,26 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001a6dc4f2830 .scope module, "porta_not_struct" "porta_not_struct" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /OUTPUT 1 "y";
+o000001a6dc5269c8 .functor BUFZ 1, C4<z>; HiZ drive
+L_000001a6dc4f2e80 .functor NOT 1, o000001a6dc5269c8, C4<0>, C4<0>, C4<0>;
+L_000001a6dc4f3140 .functor NOT 1, o000001a6dc5269c8, C4<0>, C4<0>, C4<0>;
+L_000001a6dc4f2fe0 .functor NOT 1, o000001a6dc5269c8, C4<0>, C4<0>, C4<0>;
+v000001a6dc4f29c0_0 .net "a", 0 0, o000001a6dc5269c8;  0 drivers
+RS_000001a6dc5269f8 .resolv tri, L_000001a6dc4f2e80, L_000001a6dc4f2fe0;
+v000001a6dc4f2a60_0 .net8 "not_a", 0 0, RS_000001a6dc5269f8;  2 drivers
+v000001a6dc4f2b00_0 .net "y", 0 0, L_000001a6dc4f3140;  1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "porta_not_struct.v";

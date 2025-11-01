@@ -1,0 +1,62 @@
+$date
+	Sat Nov 01 11:35:51 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100ps
+$end
+$scope module demux1p4_behav_tb $end
+$var wire 4 ! out_tb [3:0] $end
+$var reg 1 " data_in_tb $end
+$var reg 2 # sel_tb [1:0] $end
+$scope module uut $end
+$var wire 1 " data_in $end
+$var wire 2 $ sel [1:0] $end
+$var reg 4 % y [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1 %
+b0 $
+b0 #
+1"
+b1 !
+$end
+#100
+b10 !
+b10 %
+b1 #
+b1 $
+#200
+b100 !
+b100 %
+b10 #
+b10 $
+#300
+b1000 !
+b1000 %
+b11 #
+b11 $
+#500
+b0 !
+b0 %
+b0 #
+b0 $
+0"
+#600
+b1 #
+b1 $
+#700
+b10 #
+b10 $
+#800
+b11 #
+b11 $
+#1000

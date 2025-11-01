@@ -1,0 +1,49 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001bcd4072830 .scope module, "demux1p4_struct" "demux1p4_struct" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "data_in";
+    .port_info 1 /INPUT 2 "sel";
+    .port_info 2 /OUTPUT 4 "out";
+L_000001bcd41ab960 .functor NOT 1, L_000001bcd40a1ef0, C4<0>, C4<0>, C4<0>;
+L_000001bcd41ab9d0 .functor NOT 1, L_000001bcd40a1a90, C4<0>, C4<0>, C4<0>;
+o000001bcd40a7198 .functor BUFZ 1, C4<z>; HiZ drive
+L_000001bcd41aba40 .functor AND 1, o000001bcd40a7198, L_000001bcd41ab960, L_000001bcd41ab9d0, C4<1>;
+L_000001bcd41abab0 .functor AND 1, o000001bcd40a7198, L_000001bcd41ab960, L_000001bcd40a2670, C4<1>;
+L_000001bcd41abb20 .functor AND 1, o000001bcd40a7198, L_000001bcd40a1c70, L_000001bcd41ab9d0, C4<1>;
+L_000001bcd41abc20 .functor AND 1, o000001bcd40a7198, L_000001bcd40a2710, L_000001bcd40a2530, C4<1>;
+v000001bcd4072d80_0 .net *"_ivl_1", 0 0, L_000001bcd40a1ef0;  1 drivers
+v000001bcd40730f0_0 .net *"_ivl_10", 0 0, L_000001bcd41abb20;  1 drivers
+v000001bcd40729c0_0 .net *"_ivl_13", 0 0, L_000001bcd40a1c70;  1 drivers
+v000001bcd4072a60_0 .net *"_ivl_14", 0 0, L_000001bcd41abc20;  1 drivers
+v000001bcd4072b00_0 .net *"_ivl_18", 0 0, L_000001bcd40a2710;  1 drivers
+v000001bcd40a22b0_0 .net *"_ivl_20", 0 0, L_000001bcd40a2530;  1 drivers
+v000001bcd40a1db0_0 .net *"_ivl_3", 0 0, L_000001bcd40a1a90;  1 drivers
+v000001bcd40a2490_0 .net *"_ivl_4", 0 0, L_000001bcd41aba40;  1 drivers
+v000001bcd40a19f0_0 .net *"_ivl_6", 0 0, L_000001bcd41abab0;  1 drivers
+v000001bcd40a1bd0_0 .net *"_ivl_9", 0 0, L_000001bcd40a2670;  1 drivers
+v000001bcd40a1b30_0 .net "data_in", 0 0, o000001bcd40a7198;  0 drivers
+v000001bcd40a1f90_0 .net "not_sel0", 0 0, L_000001bcd41ab9d0;  1 drivers
+v000001bcd40a2030_0 .net "not_sel1", 0 0, L_000001bcd41ab960;  1 drivers
+v000001bcd40a2350_0 .net "out", 3 0, L_000001bcd40a23f0;  1 drivers
+o000001bcd40a7258 .functor BUFZ 2, C4<zz>; HiZ drive
+v000001bcd40a20d0_0 .net "sel", 1 0, o000001bcd40a7258;  0 drivers
+L_000001bcd40a1ef0 .part o000001bcd40a7258, 1, 1;
+L_000001bcd40a1a90 .part o000001bcd40a7258, 0, 1;
+L_000001bcd40a2670 .part o000001bcd40a7258, 0, 1;
+L_000001bcd40a1c70 .part o000001bcd40a7258, 1, 1;
+L_000001bcd40a23f0 .concat8 [ 1 1 1 1], L_000001bcd41aba40, L_000001bcd41abab0, L_000001bcd41abb20, L_000001bcd41abc20;
+L_000001bcd40a2710 .part o000001bcd40a7258, 1, 1;
+L_000001bcd40a2530 .part o000001bcd40a7258, 0, 1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "demux1p4_struct.v";

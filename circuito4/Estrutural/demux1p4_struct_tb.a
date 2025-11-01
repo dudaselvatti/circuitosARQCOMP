@@ -1,0 +1,91 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 10;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_00000290b20966a0 .scope module, "demux1p4_struct_tb" "demux1p4_struct_tb" 2 4;
+ .timescale -9 -10;
+v00000290b20a2150_0 .var "data_in_tb", 0 0;
+v00000290b20a28d0_0 .net "out_tb", 3 0, L_00000290b20a2790;  1 drivers
+v00000290b20a2650_0 .var "sel_tb", 1 0;
+S_00000290b205c780 .scope module, "uut" "demux1p4_struct" 2 10, 3 1 0, S_00000290b20966a0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "data_in";
+    .port_info 1 /INPUT 2 "sel";
+    .port_info 2 /OUTPUT 4 "out";
+L_00000290b2097aa0 .functor NOT 1, L_00000290b20a2a10, C4<0>, C4<0>, C4<0>;
+L_00000290b2097b10 .functor NOT 1, L_00000290b20a21f0, C4<0>, C4<0>, C4<0>;
+L_00000290b2097b80 .functor AND 1, v00000290b20a2150_0, L_00000290b2097aa0, L_00000290b2097b10, C4<1>;
+L_00000290b20978e0 .functor AND 1, v00000290b20a2150_0, L_00000290b2097aa0, L_00000290b20a2970, C4<1>;
+L_00000290b2097950 .functor AND 1, v00000290b20a2150_0, L_00000290b20a2dd0, L_00000290b2097b10, C4<1>;
+L_00000290b2097bf0 .functor AND 1, v00000290b20a2150_0, L_00000290b20a2290, L_00000290b20a2330, C4<1>;
+v00000290b2072dc0_0 .net *"_ivl_1", 0 0, L_00000290b20a2a10;  1 drivers
+v00000290b2072b60_0 .net *"_ivl_10", 0 0, L_00000290b2097950;  1 drivers
+v00000290b205a990_0 .net *"_ivl_13", 0 0, L_00000290b20a2dd0;  1 drivers
+v00000290b2073130_0 .net *"_ivl_14", 0 0, L_00000290b2097bf0;  1 drivers
+v00000290b2096830_0 .net *"_ivl_18", 0 0, L_00000290b20a2290;  1 drivers
+v00000290b20a2470_0 .net *"_ivl_20", 0 0, L_00000290b20a2330;  1 drivers
+v00000290b20a2d30_0 .net *"_ivl_3", 0 0, L_00000290b20a21f0;  1 drivers
+v00000290b20a23d0_0 .net *"_ivl_4", 0 0, L_00000290b2097b80;  1 drivers
+v00000290b20a2e70_0 .net *"_ivl_6", 0 0, L_00000290b20978e0;  1 drivers
+v00000290b20a1f70_0 .net *"_ivl_9", 0 0, L_00000290b20a2970;  1 drivers
+v00000290b20a20b0_0 .net "data_in", 0 0, v00000290b20a2150_0;  1 drivers
+v00000290b20a2510_0 .net "not_sel0", 0 0, L_00000290b2097b10;  1 drivers
+v00000290b20a2c90_0 .net "not_sel1", 0 0, L_00000290b2097aa0;  1 drivers
+v00000290b20a2010_0 .net "out", 3 0, L_00000290b20a2790;  alias, 1 drivers
+v00000290b20a25b0_0 .net "sel", 1 0, v00000290b20a2650_0;  1 drivers
+L_00000290b20a2a10 .part v00000290b20a2650_0, 1, 1;
+L_00000290b20a21f0 .part v00000290b20a2650_0, 0, 1;
+L_00000290b20a2970 .part v00000290b20a2650_0, 0, 1;
+L_00000290b20a2dd0 .part v00000290b20a2650_0, 1, 1;
+L_00000290b20a2790 .concat8 [ 1 1 1 1], L_00000290b2097b80, L_00000290b20978e0, L_00000290b2097950, L_00000290b2097bf0;
+L_00000290b20a2290 .part v00000290b20a2650_0, 1, 1;
+L_00000290b20a2330 .part v00000290b20a2650_0, 0, 1;
+    .scope S_00000290b20966a0;
+T_0 ;
+    %vpi_call 2 17 "$dumpfile", "demux1p4_struct.vcd" {0 0 0};
+    %vpi_call 2 18 "$dumpvars", 32'sb00000000000000000000000000000000, S_00000290b20966a0 {0 0 0};
+    %vpi_call 2 20 "$monitor", "Tempo=%0t | data_in=%b sel=%b | out[3:0]=%b", $time, v00000290b20a2150_0, v00000290b20a2650_0, v00000290b20a28d0_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000290b20a2150_0, 0, 1;
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v00000290b20a2650_0, 0, 2;
+    %delay 100, 0;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v00000290b20a2650_0, 0, 2;
+    %delay 100, 0;
+    %pushi/vec4 2, 0, 2;
+    %store/vec4 v00000290b20a2650_0, 0, 2;
+    %delay 100, 0;
+    %pushi/vec4 3, 0, 2;
+    %store/vec4 v00000290b20a2650_0, 0, 2;
+    %delay 100, 0;
+    %delay 100, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000290b20a2150_0, 0, 1;
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v00000290b20a2650_0, 0, 2;
+    %delay 100, 0;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v00000290b20a2650_0, 0, 2;
+    %delay 100, 0;
+    %pushi/vec4 2, 0, 2;
+    %store/vec4 v00000290b20a2650_0, 0, 2;
+    %delay 100, 0;
+    %pushi/vec4 3, 0, 2;
+    %store/vec4 v00000290b20a2650_0, 0, 2;
+    %delay 100, 0;
+    %delay 100, 0;
+    %vpi_call 2 37 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "demux1p4_struct_tb.v";
+    "./demux1p4_struct.v";

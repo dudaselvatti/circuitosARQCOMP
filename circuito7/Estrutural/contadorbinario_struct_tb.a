@@ -1,0 +1,171 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 10;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000022d64965b70 .scope module, "contadorbinario_struct_tb" "contadorbinario_struct_tb" 2 4;
+ .timescale -9 -10;
+v0000022d6496dfe0_0 .var "clk_tb", 0 0;
+v0000022d6496e3a0_0 .net "q_tb", 3 0, L_0000022d64a0dc70;  1 drivers
+v0000022d6496e800_0 .var "rst_tb", 0 0;
+S_0000022d6496b8a0 .scope module, "uut" "contadorbinario_struct" 2 11, 3 3 0, S_0000022d64965b70;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "rst";
+    .port_info 2 /OUTPUT 4 "q";
+L_0000022d649c5858 .functor BUFT 1, C4<0001>, C4<0>, C4<0>, C4<0>;
+v0000022d6496e080_0 .net/2u *"_ivl_0", 3 0, L_0000022d649c5858;  1 drivers
+v0000022d6496dae0_0 .net "clk", 0 0, v0000022d6496dfe0_0;  1 drivers
+v0000022d6496df40_0 .net "d", 3 0, L_0000022d6496e8a0;  1 drivers
+v0000022d6496e260_0 .net "q", 3 0, L_0000022d64a0dc70;  alias, 1 drivers
+v0000022d6496e940_0 .net "rst", 0 0, v0000022d6496e800_0;  1 drivers
+L_0000022d6496e8a0 .arith/sum 4, L_0000022d64a0dc70, L_0000022d649c5858;
+L_0000022d64a0ea30 .part L_0000022d6496e8a0, 0, 1;
+L_0000022d64a0d950 .part L_0000022d6496e8a0, 1, 1;
+L_0000022d64a0e5d0 .part L_0000022d6496e8a0, 2, 1;
+L_0000022d64a0e030 .part L_0000022d6496e8a0, 3, 1;
+L_0000022d64a0dc70 .concat8 [ 1 1 1 1], v0000022d6496e120_0, v0000022d6496e620_0, v0000022d6496dd60_0, v0000022d6496dc20_0;
+S_0000022d6496ba30 .scope module, "U0_dff" "dff_module" 3 15, 4 2 0, S_0000022d6496b8a0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "rst";
+    .port_info 2 /INPUT 1 "d";
+    .port_info 3 /OUTPUT 1 "q";
+v0000022d6496e440_0 .net "clk", 0 0, v0000022d6496dfe0_0;  alias, 1 drivers
+v0000022d6496dcc0_0 .net "d", 0 0, L_0000022d64a0ea30;  1 drivers
+v0000022d6496e120_0 .var "q", 0 0;
+v0000022d6496e580_0 .net "rst", 0 0, v0000022d6496e800_0;  alias, 1 drivers
+E_0000022d6496a5b0 .event posedge, v0000022d6496e580_0, v0000022d6496e440_0;
+S_0000022d64975770 .scope module, "U1_dff" "dff_module" 3 16, 4 2 0, S_0000022d6496b8a0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "rst";
+    .port_info 2 /INPUT 1 "d";
+    .port_info 3 /OUTPUT 1 "q";
+v0000022d6496e4e0_0 .net "clk", 0 0, v0000022d6496dfe0_0;  alias, 1 drivers
+v0000022d6496e300_0 .net "d", 0 0, L_0000022d64a0d950;  1 drivers
+v0000022d6496e620_0 .var "q", 0 0;
+v0000022d6496e6c0_0 .net "rst", 0 0, v0000022d6496e800_0;  alias, 1 drivers
+S_0000022d64975900 .scope module, "U2_dff" "dff_module" 3 17, 4 2 0, S_0000022d6496b8a0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "rst";
+    .port_info 2 /INPUT 1 "d";
+    .port_info 3 /OUTPUT 1 "q";
+v0000022d6496db80_0 .net "clk", 0 0, v0000022d6496dfe0_0;  alias, 1 drivers
+v0000022d6496e1c0_0 .net "d", 0 0, L_0000022d64a0e5d0;  1 drivers
+v0000022d6496dd60_0 .var "q", 0 0;
+v0000022d6496de00_0 .net "rst", 0 0, v0000022d6496e800_0;  alias, 1 drivers
+S_0000022d64942760 .scope module, "U3_dff" "dff_module" 3 18, 4 2 0, S_0000022d6496b8a0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "rst";
+    .port_info 2 /INPUT 1 "d";
+    .port_info 3 /OUTPUT 1 "q";
+v0000022d6496e760_0 .net "clk", 0 0, v0000022d6496dfe0_0;  alias, 1 drivers
+v0000022d6496da40_0 .net "d", 0 0, L_0000022d64a0e030;  1 drivers
+v0000022d6496dc20_0 .var "q", 0 0;
+v0000022d6496dea0_0 .net "rst", 0 0, v0000022d6496e800_0;  alias, 1 drivers
+    .scope S_0000022d6496ba30;
+T_0 ;
+    %wait E_0000022d6496a5b0;
+    %load/vec4 v0000022d6496e580_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0000022d6496e120_0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v0000022d6496dcc0_0;
+    %assign/vec4 v0000022d6496e120_0, 0;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0000022d64975770;
+T_1 ;
+    %wait E_0000022d6496a5b0;
+    %load/vec4 v0000022d6496e6c0_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_1.0, 8;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0000022d6496e620_0, 0;
+    %jmp T_1.1;
+T_1.0 ;
+    %load/vec4 v0000022d6496e300_0;
+    %assign/vec4 v0000022d6496e620_0, 0;
+T_1.1 ;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_0000022d64975900;
+T_2 ;
+    %wait E_0000022d6496a5b0;
+    %load/vec4 v0000022d6496de00_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_2.0, 8;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0000022d6496dd60_0, 0;
+    %jmp T_2.1;
+T_2.0 ;
+    %load/vec4 v0000022d6496e1c0_0;
+    %assign/vec4 v0000022d6496dd60_0, 0;
+T_2.1 ;
+    %jmp T_2;
+    .thread T_2;
+    .scope S_0000022d64942760;
+T_3 ;
+    %wait E_0000022d6496a5b0;
+    %load/vec4 v0000022d6496dea0_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_3.0, 8;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0000022d6496dc20_0, 0;
+    %jmp T_3.1;
+T_3.0 ;
+    %load/vec4 v0000022d6496da40_0;
+    %assign/vec4 v0000022d6496dc20_0, 0;
+T_3.1 ;
+    %jmp T_3;
+    .thread T_3;
+    .scope S_0000022d64965b70;
+T_4 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000022d6496dfe0_0, 0, 1;
+T_4.0 ;
+    %delay 50, 0;
+    %load/vec4 v0000022d6496dfe0_0;
+    %inv;
+    %store/vec4 v0000022d6496dfe0_0, 0, 1;
+    %jmp T_4.0;
+    %end;
+    .thread T_4;
+    .scope S_0000022d64965b70;
+T_5 ;
+    %vpi_call 2 23 "$dumpfile", "contadorbinario_struct.vcd" {0 0 0};
+    %vpi_call 2 24 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000022d64965b70 {0 0 0};
+    %vpi_call 2 26 "$monitor", "Tempo=%0t | rst=%b, clk=%b | count=%b (%d)", $time, v0000022d6496e800_0, v0000022d6496dfe0_0, v0000022d6496e3a0_0, v0000022d6496e3a0_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000022d6496e800_0, 0, 1;
+    %delay 150, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000022d6496e800_0, 0, 1;
+    %delay 2000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000022d6496e800_0, 0, 1;
+    %delay 200, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000022d6496e800_0, 0, 1;
+    %delay 200, 0;
+    %vpi_call 2 38 "$finish" {0 0 0};
+    %end;
+    .thread T_5;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "contadorbinario_struct_tb.v";
+    "./contadorbinario_struct.v";
+    "./dff_module.v";
